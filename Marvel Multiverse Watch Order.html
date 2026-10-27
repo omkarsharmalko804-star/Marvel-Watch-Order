@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Multiverse Ultimate Timeline & Watch Order | Created by Omkar Sharma</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@700;900&family=JetBrains+Mono:wght@500;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --marvel-red: #FF0033;
+            --marvel-gold: #FFD700;
+            --marvel-cyan: #00F0FF;
+            --marvel-purple: #B026FF;
+            --spidey-blue: #0066FF;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #06070c;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .font-bebas {
+            font-family: 'Bebas Neue', cursive, sans-serif;
+            letter-spacing: 0.06em;
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .font-mono-tag {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Vibrant Glows & Neon Metallic Effects */
+        .glow-stark-red {
+            text-shadow: 0 0 15px rgba(255, 0, 51, 0.9), 0 0 30px rgba(255, 0, 51, 0.5);
+        }
+
+        .glow-cosmic-gold {
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .glow-infinity-cyan {
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.9), 0 0 30px rgba(0, 240, 255, 0.5);
+        }
+
+        .glow-spider-sense {
+            animation: spiderSensePulse 1.2s infinite alternate ease-in-out;
+        }
+
+        @keyframes spiderSensePulse {
+            0% {
+                box-shadow: 0 0 15px rgba(255, 0, 51, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+                border-color: #FF0033;
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 0, 51, 0.9);
+                border-color: #FFD700;
+            }
+        }
+
+        /* Comic Action Gradients */
+        .bg-marvel-gradient {
+            background: linear-gradient(135deg, #FF0033 0%, #B90022 50%, #700012 100%);
+        }
+
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #FFE566 0%, #FFD700 50%, #B88600 100%);
+        }
+
+        .text-gradient-marvel {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFE6E8 25%, #FF0033 75%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-spidey {
+            background: linear-gradient(135deg, #FF0033 0%, #0066FF 60%, #00F0FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Web Background Canvas */
+        #web-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Vibrant Glass Cards */
+        .glass-card-vibrant {
+            background: rgba(14, 18, 28, 0.88);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card-vibrant:hover {
+            border-color: rgba(255, 0, 51, 0.7);
+            box-shadow: 0 10px 35px -5px rgba(255, 0, 51, 0.35), 0 0 15px rgba(0, 240, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .spider-card-glow {
+            border-color: rgba(0, 102, 255, 0.6) !important;
+        }
+        .spider-card-glow:hover {
+            box-shadow: 0 10px 40px -5px rgba(0, 102, 255, 0.6), 0 0 25px rgba(255, 0, 51, 0.5) !important;
+        }
+
+        /* Timeline Connector */
+        .timeline-line-vibrant {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            background: linear-gradient(180deg, #FF0033 0%, #FFD700 33%, #00F0FF 66%, #B026FF 100%);
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.8);
+            z-index: 1;
+        }
+
+        /* Creator Gold Badge Shimmer */
+        .creator-badge-shimmer {
+            background: linear-gradient(90deg, rgba(255,215,0,0.15) 0%, rgba(255,215,0,0.45) 50%, rgba(255,215,0,0.15) 100%);
+            background-size: 200% 100%;
+            animation: badgeShimmer 2.5s infinite linear;
+        }
+
+        @keyframes badgeShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06070c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF0033;
+            border-radius: 4px;
+        }
+
+        /* Spider Sense Radar Sweeper */
+        @keyframes radarSweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .radar-sweep {
+            animation: radarSweep 2s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line-vibrant {
+                left: 28px;
+            }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen pb-16">
+
+    <!-- Dynamic Spider Web Interactive Canvas -->
+    <canvas id="web-canvas"></canvas>
+
+    <!-- Sticky Top Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-red-900/40 px-4 py-2.5 shadow-xl">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-marvel-gradient flex items-center justify-center font-bebas text-xl text-white font-black shadow-lg shadow-red-600/50">
+                    M
+                </div>
+                <span class="font-bebas text-2xl text-gradient-marvel tracking-wider">MARVEL TIMELINE</span>
+            </div>
+
+            <!-- Header Creator Branding Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-card-vibrant border-amber-400/50 creator-badge-shimmer shadow-lg shadow-amber-950/50">
+                <i data-lucide="shield-check" class="w-4 h-4 text-amber-400 animate-bounce"></i>
+                <span class="font-cinzel text-xs font-black tracking-widest text-amber-300 uppercase glow-cosmic-gold">
+                    CREATED BY OMKAR SHARMA
+                </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button id="btn-sound-toggle" onclick="toggleAudio()" class="p-2 rounded-lg bg-slate-900 border border-slate-700 text-amber-400 hover:text-white transition-all text-xs font-mono-tag flex items-center gap-1.5" title="Toggle Marvel SFX">
+                    <i data-lucide="volume-2" id="sound-icon" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">SFX: ON</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main App Container -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+
+        <!-- Dynamic MCU & Spidey Quote Ticker -->
+        <div class="glass-card-vibrant rounded-xl px-4 py-2 mb-6 text-center border-red-600/40 shadow-lg shadow-red-950/30">
+            <p id="mcu-quote" class="font-cinzel text-xs sm:text-sm text-amber-300 font-bold italic tracking-wide">
+                "With great power comes great responsibility." — Peter Parker
+            </p>
+        </div>
+
+        <!-- Hero Title Header -->
+        <header class="text-center py-6 px-4 relative">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/90 border-2 border-red-500 text-red-300 font-mono-tag text-xs font-extrabold tracking-widest uppercase mb-3 shadow-lg shadow-red-900/60">
+                <i data-lucide="bug" class="w-4 h-4 text-red-400 animate-pulse"></i> SPIDER DYNAMIC MULTIVERSE REPOSITORY
+            </div>
+            
+            <h1 class="font-bebas text-6xl sm:text-8xl md:text-9xl font-black tracking-wider text-gradient-marvel drop-shadow-2xl leading-none">
+                MARVEL UNIVERSE
+            </h1>
+            
+            <p class="font-bebas text-2xl sm:text-4xl text-gradient-spidey tracking-widest uppercase glow-stark-red -mt-1 sm:-mt-2 mb-3">
+                CHRONOLOGICAL & RELEASE MULTIVERSE WATCH ORDER
+            </p>
+
+            <!-- Prominent Creator Hero Signature -->
+            <div class="inline-flex items-center justify-center gap-3 px-6 py-2 rounded-2xl bg-gradient-to-r from-red-950 via-slate-900 to-amber-950 border-2 border-amber-400/80 shadow-2xl shadow-amber-900/50 my-2">
+                <i data-lucide="crown" class="w-5 h-5 text-amber-400"></i>
+                <span class="font-cinzel text-sm sm:text-base font-black tracking-widest text-amber-300 uppercase">
+                    ULTIMATE TIMELINE ARCHITECT: <span class="text-white underline decoration-red-500 decoration-2">OMKAR SHARMA</span>
+                </span>
+            </div>
+        </header>
+
+        <!-- Stats Counter Section -->
+        <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 my-8">
+            <div class="glass-card-vibrant p-4 rounded-2xl text-center border-red-500/40 relative overflow-hidden">
+                <span class="text-[10px] sm:text-xs font-mono-tag text-slate-400 uppercase tracking-widest font-extrabold block mb-1">Watched Titles</span>
+                <span id="stat-watched" class="font-bebas text-4xl sm:text-5xl text-white tracking-wide">0 / 0</span>
+            </div>
+            <div class="glass-card-vibrant p-4 rounded-2xl text-center border-amber-400/40 relative overflow-hidden">
+                <span class="text-[10px] sm:text-xs font-mono-tag text-slate-400 uppercase tracking-widest font-extrabold block mb-1">Multiverse Completion</span>
+                <span id="stat-progress" class="font-bebas text-4xl sm:text-5xl text-amber-400 glow-cosmic-gold tracking-wide">0%</span>
+            </div>
+            <div class="glass-card-vibrant p-4 rounded-2xl text-center border-cyan-400/40 relative overflow-hidden">
+                <span class="text-[10px] sm:text-xs font-mono-tag text-slate-400 uppercase tracking-widest font-extrabold block mb-1">Time Watched</span>
+                <span id="stat-time" class="font-bebas text-3xl sm:text-4xl text-cyan-400 glow-infinity-cyan tracking-wide py-0.5 block">0h 0m</span>
+            </div>
+            <div class="glass-card-vibrant p-4 rounded-2xl text-center border-purple-500/40 relative overflow-hidden">
+                <span class="text-[10px] sm:text-xs font-mono-tag text-slate-400 uppercase tracking-widest font-extrabold block mb-1">Remaining Binge</span>
+                <span id="stat-remaining" class="font-bebas text-3xl sm:text-4xl text-purple-400 tracking-wide py-0.5 block">0h 0m</span>
+            </div>
+        </section>
+
+        <!-- Spider-Sense & Action Recommendation Banner -->
+        <section class="glass-card-vibrant rounded-2xl p-5 mb-8 flex flex-col md:flex-row items-center justify-between gap-5 border-2 border-red-600/50 shadow-2xl shadow-red-950/40">
+            <div class="flex items-center gap-4 w-full md:w-auto">
+                <div class="p-3.5 rounded-2xl bg-marvel-gradient text-white shrink-0 shadow-lg shadow-red-600/60 relative">
+                    <i data-lucide="play-circle" class="w-7 h-7 animate-pulse"></i>
+                    <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-400 animate-ping"></span>
+                </div>
+                <div>
+                    <span class="text-xs font-mono-tag uppercase tracking-widest text-red-400 font-black flex items-center gap-1.5">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-400"></i> Next Chronological Watch
+                    </span>
+                    <h3 id="recommend-title" class="font-bebas text-2xl sm:text-3xl text-white tracking-wide leading-none mt-0.5">
+                        Loading Marvel entry...
+                    </h3>
+                    <p id="recommend-sub" class="text-xs text-slate-300 font-medium mt-1">Calculated based on your progress</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-end">
+                <button id="btn-spidey-sense" onclick="openSpiderSenseModal()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-500 hover:to-red-500 text-white font-bebas text-xl tracking-wider flex items-center justify-center gap-2 transition-all shadow-xl shadow-blue-900/50 border border-blue-400/50 active:scale-95">
+                    <i data-lucide="bug" class="w-5 h-5 text-amber-300"></i> SPIDER-SENSE PICK
+                </button>
+                <button id="btn-quick-watch" onclick="watchNextTitle()" class="px-5 py-2.5 rounded-xl bg-marvel-gradient hover:opacity-90 text-white font-bebas text-xl tracking-wider flex items-center justify-center gap-2 transition-all shadow-xl shadow-red-900/60 active:scale-95">
+                    <i data-lucide="play" class="w-4 h-4 fill-current"></i> WATCH NEXT
+                </button>
+                <button onclick="openSpinModal()" class="px-4 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/60 text-amber-300 font-bebas text-xl tracking-wider flex items-center justify-center gap-2 transition-all active:scale-95">
+                    <i data-lucide="dices" class="w-5 h-5 text-amber-400"></i> RANDOMIZER
+                </button>
+            </div>
+        </section>
+
+        <!-- Dynamic Controls & Filters -->
+        <section class="glass-card-vibrant rounded-2xl p-5 mb-8 space-y-4 border-slate-700/80">
+            <!-- Search & Order Toggles -->
+            <div class="flex flex-col lg:flex-row gap-4 justify-between items-stretch lg:items-center">
+                <!-- Search -->
+                <div class="relative flex-1">
+                    <i data-lucide="search" class="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="search-input" oninput="applyFilters()" placeholder="Search Spider-Man, Avengers, X-Men, Earth-616..." class="w-full pl-11 pr-4 py-2.5 rounded-xl bg-slate-900/90 border-2 border-slate-700 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-red-500 font-medium transition-colors">
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <!-- Order Mode -->
+                    <div class="inline-flex rounded-xl bg-slate-950 p-1 border border-slate-800 text-xs font-mono-tag">
+                        <button id="order-chrono" onclick="setOrder('chronological')" class="px-3.5 py-2 rounded-lg font-bold transition-all bg-red-600 text-white shadow-lg shadow-red-900/50">
+                            CHRONOLOGICAL
+                        </button>
+                        <button id="order-release" onclick="setOrder('release')" class="px-3.5 py-2 rounded-lg font-bold transition-all text-slate-400 hover:text-white">
+                            RELEASE DATE
+                        </button>
+                    </div>
+
+                    <!-- Layout Toggle -->
+                    <div class="inline-flex rounded-xl bg-slate-950 p-1 border border-slate-800 text-xs font-mono-tag">
+                        <button id="view-grid" onclick="setView('grid')" class="p-2 rounded-lg transition-all bg-red-600 text-white" title="Grid View">
+                            <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        </button>
+                        <button id="view-timeline" onclick="setView('timeline')" class="p-2 rounded-lg transition-all text-slate-400 hover:text-white" title="Timeline Tree View">
+                            <i data-lucide="git-commit" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Backup Data -->
+                    <button onclick="exportProgress()" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 transition-all" title="Export Backup JSON">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="resetProgress()" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-red-400 hover:bg-red-950/50 transition-all" title="Reset Watch Progress">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="space-y-2 pt-3 border-t border-slate-800">
+                <div class="flex flex-wrap items-center gap-1.5" id="category-filters">
+                    <span class="text-xs font-mono-tag text-amber-400 mr-2 uppercase font-extrabold">Multiverse Saga:</span>
+                    <button onclick="filterCategory('ALL')" class="cat-btn active px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-red-600 text-white shadow">ALL</button>
+                    <button onclick="filterCategory('Spider-Verse')" class="cat-btn px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-slate-900 text-blue-400 border border-blue-900/60 hover:text-white">SPIDER-VERSE</button>
+                    <button onclick="filterCategory('MCU Main')" class="cat-btn px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white">MCU MAIN</button>
+                    <button onclick="filterCategory('Legacy X-Men')" class="cat-btn px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white">X-MEN</button>
+                    <button onclick="filterCategory('Defenders')" class="cat-btn px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white">DEFENDERS</button>
+                    <button onclick="filterCategory('Animation')" class="cat-btn px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white">ANIMATION</button>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1.5" id="type-filters">
+                    <span class="text-xs font-mono-tag text-slate-400 mr-2 uppercase font-extrabold">Media Type:</span>
+                    <button onclick="filterType('ALL')" class="type-btn active px-2.5 py-0.5 rounded text-xs font-mono-tag bg-slate-800 text-white font-bold">ALL</button>
+                    <button onclick="filterType('Movie')" class="type-btn px-2.5 py-0.5 rounded text-xs font-mono-tag bg-slate-900 text-slate-400 border border-slate-800 hover:text-white">MOVIES</button>
+                    <button onclick="filterType('Series')" class="type-btn px-2.5 py-0.5 rounded text-xs font-mono-tag bg-slate-900 text-slate-400 border border-slate-800 hover:text-white">SERIES</button>
+                    <button onclick="filterType('Special')" class="type-btn px-2.5 py-0.5 rounded text-xs font-mono-tag bg-slate-900 text-slate-400 border border-slate-800 hover:text-white">SPECIALS</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Display Container -->
+        <main id="content-container" class="relative min-h-[400px] mb-12">
+            <!-- Dynamic Entries Rendered Here -->
+        </main>
+
+        <!-- Stylized Creator Footer -->
+        <footer class="mt-20 pt-8 border-t-2 border-red-900/60 text-center relative">
+            <div class="inline-flex flex-col items-center gap-3 mb-4">
+                <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-2xl bg-slate-900 border-2 border-amber-400 text-amber-300 shadow-2xl shadow-amber-950/50">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-amber-400 animate-bounce"></i>
+                    <span class="font-cinzel text-base font-black tracking-widest text-amber-300 uppercase glow-cosmic-gold">
+                        CREATED BY OMKAR SHARMA
+                    </span>
+                </div>
+                <p class="font-bebas text-xl text-slate-400 tracking-wider">
+                    COMPREHENSIVE MARVEL MULTIVERSE DIRECTORY (2002 – 2026)
+                </p>
+            </div>
+            <p class="text-xs text-slate-400 max-w-lg mx-auto font-medium leading-relaxed">
+                Marvel Cinematic Universe, Spider-Verse, X-Men & Defenders timeline tracker. All Marvel character properties belong to Marvel Studios, Disney, and Sony Pictures.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Spider-Sense Pick Modal -->
+    <div id="modal-spidey" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card-vibrant rounded-2xl max-w-md w-full p-6 text-center border-2 border-red-600 relative overflow-hidden">
+            <button onclick="closeSpiderSenseModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="w-16 h-16 rounded-full bg-marvel-gradient mx-auto flex items-center justify-center mb-3 shadow-xl shadow-red-600/60 relative">
+                <i data-lucide="bug" class="w-8 h-8 text-amber-300 animate-pulse"></i>
+            </div>
+            <h3 class="font-bebas text-4xl text-gradient-spidey tracking-wide mb-1">SPIDER-SENSE SCANNER</h3>
+            <p class="text-xs text-slate-300 mb-6 font-semibold">Tingle alert! Locating Spider-Man watch targets...</p>
+
+            <div id="spidey-scan-result" class="glass-card-vibrant p-5 rounded-xl border-blue-500/50 mb-6 min-h-[110px] flex flex-col items-center justify-center">
+                <span class="font-bebas text-2xl text-white">Press Scan for Spider-Sense Pick!</span>
+            </div>
+
+            <button onclick="triggerSpiderSenseScan()" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-500 hover:to-red-500 text-white font-bebas text-2xl tracking-wider shadow-lg shadow-blue-900/60 transition-all active:scale-95">
+                ACTIVATE SPIDER-SENSE
+            </button>
+        </div>
+    </div>
+
+    <!-- Spin Randomizer Modal -->
+    <div id="modal-spin" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card-vibrant rounded-2xl max-w-md w-full p-6 text-center border-2 border-amber-400 relative">
+            <button onclick="closeSpinModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 mx-auto flex items-center justify-center mb-3">
+                <i data-lucide="dices" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bebas text-3xl text-amber-400 tracking-wide mb-1">QUANTUM RANDOMIZER</h3>
+            <p class="text-xs text-slate-400 mb-6 font-medium">Randomly selecting from unwatched titles...</p>
+
+            <div id="spin-display" class="glass-card-vibrant p-5 rounded-xl border-slate-700 mb-6 min-h-[110px] flex flex-col justify-center items-center">
+                <span class="font-bebas text-2xl text-white">Ready to Spin!</span>
+            </div>
+
+            <button onclick="spinRandomizer()" class="w-full py-3 rounded-xl bg-gold-gradient text-slate-950 font-bebas text-2xl tracking-wider shadow-lg shadow-amber-950/50 transition-all active:scale-95 font-black">
+                SPIN WHEEL
+            </button>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="modal-detail" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card-vibrant rounded-2xl max-w-2xl w-full p-6 md:p-8 border-2 border-red-600/80 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeDetailModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-detail-content"></div>
+        </div>
+    </div>
+
+    <script>
+        // Marvel Multiverse 65+ English Comprehensive Watch Order Database
+        const MARVEL_DATA = [
+            { id: "spidey1", title: "Spider-Man", year: 2002, chrono: 1, type: "Movie", phase: "Spider-Verse", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-96283", runtime: 121, summary: "High schooler Peter Parker gains spider-like capabilities after being bitten by a genetically altered spider and fights the Green Goblin.", characters: ["Peter Parker", "Norman Osborn", "MJ Watson"], platforms: ["Disney+", "Starz"], context: "Tobey Maguire's legendary original Spider-Man origin." },
+            { id: "spidey2", title: "Spider-Man 2", year: 2004, chrono: 2, type: "Movie", phase: "Spider-Verse", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-96283", runtime: 127, summary: "Peter Parker struggles with personal life and loses powers while fighting brilliant scientist Doctor Octopus.", characters: ["Peter Parker", "Doc Ock", "Harry Osborn"], platforms: ["Disney+"], context: "Widely regarded as one of the greatest superhero movies." },
+            { id: "spidey3", title: "Spider-Man 3", year: 2007, chrono: 3, type: "Movie", phase: "Spider-Verse", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-96283", runtime: 139, summary: "A strange alien entity bonds with Peter, amplifying his darkest desires while Sandman and Venom emerge.", characters: ["Peter Parker", "Venom", "Sandman"], platforms: ["Disney+"], context: "Climax of Tobey Maguire's trilogy." },
+            { id: "tasm1", title: "The Amazing Spider-Man", year: 2012, chrono: 4, type: "Movie", phase: "Spider-Verse", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-12070", runtime: 136, summary: "Andrew Garfield's Peter Parker unravels the mystery of his parents' disappearance while fighting the Lizard.", characters: ["Peter Parker", "Gwen Stacy", "Dr. Curt Connors"], platforms: ["Disney+"], context: "First installment in Andrew Garfield's Spider-Man timeline." },
+            { id: "tasm2", title: "The Amazing Spider-Man 2", year: 2014, chrono: 5, type: "Movie", phase: "Spider-Verse", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-12070", runtime: 142, summary: "Peter Parker battles Electro and Green Goblin while protecting Gwen Stacy.", characters: ["Peter Parker", "Gwen Stacy", "Electro", "Harry Osborn"], platforms: ["Disney+"], context: "Establishes Electro's origins before No Way Home." },
+            { id: "cap1", title: "Captain America: The First Avenger", year: 2011, chrono: 6, type: "Movie", phase: "Phase 1", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 124, summary: "Steve Rogers undergoes super-soldier transformation in WWII and battles Hydra led by Red Skull.", characters: ["Steve Rogers", "Peggy Carter", "Bucky Barnes"], platforms: ["Disney+"], context: "Earliest story in the MCU main timeline." },
+            { id: "cm1", title: "Captain Marvel", year: 2019, chrono: 7, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 124, summary: "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in a galactic war in 1995.", characters: ["Carol Danvers", "Nick Fury", "Talos"], platforms: ["Disney+"], context: "1990s timeline origin for Nick Fury and Tesseract." },
+            { id: "im1", title: "Iron Man", year: 2008, chrono: 8, type: "Movie", phase: "Phase 1", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 126, summary: "Billionaire industrialist Tony Stark builds an armored suit to fight evil after escaping captivity.", characters: ["Tony Stark", "Pepper Potts", "Rhodey"], platforms: ["Disney+"], context: "The birth movie of the MCU." },
+            { id: "im2", title: "Iron Man 2", year: 2010, chrono: 9, type: "Movie", phase: "Phase 1", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 124, summary: "Tony Stark faces vengeful Ivan Vanko while resisting government pressure to hand over technology.", characters: ["Tony Stark", "Natasha Romanoff", "Whiplash"], platforms: ["Disney+"], context: "Part of Fury's Big Week." },
+            { id: "hulk", title: "The Incredible Hulk", year: 2008, chrono: 10, type: "Movie", phase: "Phase 1", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 112, summary: "Bruce Banner searches for a cure for his gamma radiation state while hunted by General Ross.", characters: ["Bruce Banner", "Betty Ross", "Abomination"], platforms: ["Disney+"], context: "Fury's Big Week." },
+            { id: "thor1", title: "Thor", year: 2011, chrono: 11, type: "Movie", phase: "Phase 1", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 115, summary: "The arrogant god Thor is cast out of Asgard to live among humans on Earth.", characters: ["Thor", "Loki", "Jane Foster"], platforms: ["Disney+"], context: "Introduces cosmic realms and Loki's schemes." },
+            { id: "avengers1", title: "The Avengers", year: 2012, chrono: 12, type: "Movie", phase: "Phase 1", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 143, summary: "Earth's Mightiest Heroes assemble to stop Loki and an alien army from enslaving Earth.", characters: ["Iron Man", "Captain America", "Thor", "Hulk", "Black Widow", "Hawkeye"], platforms: ["Disney+"], context: "Battle of New York changes the universe." },
+            { id: "im3", title: "Iron Man 3", year: 2013, chrono: 13, type: "Movie", phase: "Phase 2", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 130, summary: "Tony Stark faces the mysterious Mandarin while dealing with PTSD after New York.", characters: ["Tony Stark", "Pepper Potts", "Mandarin"], platforms: ["Disney+"], context: "Set during Christmas 2012." },
+            { id: "thor2", title: "Thor: The Dark World", year: 2013, chrono: 14, type: "Movie", phase: "Phase 2", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 112, summary: "Thor teams up with Loki to save Nine Realms from Dark Elves seeking the Reality Stone.", characters: ["Thor", "Loki", "Malekith"], platforms: ["Disney+"], context: "Introduces the Reality Stone (Aether)." },
+            { id: "cap2", title: "Captain America: The Winter Soldier", year: 2014, chrono: 15, type: "Movie", phase: "Phase 2", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 136, summary: "Steve Rogers unravels a conspiracy within S.H.I.E.L.D. alongside Black Widow and Falcon.", characters: ["Steve Rogers", "Bucky Barnes", "Natasha Romanoff"], platforms: ["Disney+"], context: "Reveals Hydra's deep survival inside S.H.I.E.L.D." },
+            { id: "gotg1", title: "Guardians of the Galaxy", year: 2014, chrono: 16, type: "Movie", phase: "Phase 2", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 121, summary: "Intergalactic misfits band together to stop Ronan from destroying Xandar.", characters: ["Star-Lord", "Gamora", "Drax", "Groot", "Rocket"], platforms: ["Disney+"], context: "Power Stone lore." },
+            { id: "gotg2", title: "Guardians of the Galaxy Vol. 2", year: 2017, chrono: 17, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 136, summary: "The Guardians travel across the cosmos and unlock Peter Quill's true parentage.", characters: ["Star-Lord", "Ego", "Baby Groot", "Mantis"], platforms: ["Disney+"], context: "Occurs 2 months after GotG 1." },
+            { id: "dd1", title: "Daredevil (Season 1)", year: 2015, chrono: 18, type: "Series", phase: "Defenders", saga: "Defenders Saga", category: "Defenders", earth: "Earth-616", runtime: 650, summary: "Blind lawyer Matt Murdock fights crime in Hell's Kitchen as Daredevil.", characters: ["Matt Murdock", "Wilson Fisk", "Foggy Nelson"], platforms: ["Disney+"], context: "Street-level heroics post Battle of NY." },
+            { id: "aou", title: "Avengers: Age of Ultron", year: 2015, chrono: 19, type: "Movie", phase: "Phase 2", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 141, summary: "Tony Stark creates Ultron, an AI that becomes rogue and decides humanity must be destroyed.", characters: ["Avengers", "Ultron", "Wanda Maximoff", "Vision"], platforms: ["Disney+"], context: "Birth of Vision and Wanda." },
+            { id: "ant1", title: "Ant-Man", year: 2015, chrono: 20, type: "Movie", phase: "Phase 2", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 117, summary: "Armed with a suit that shrinks size but increases strength, Scott Lang turns hero.", characters: ["Scott Lang", "Hank Pym", "Hope van Dyne"], platforms: ["Disney+"], context: "Introduces Quantum Realm." },
+            { id: "cap3", title: "Captain America: Civil War", year: 2016, chrono: 21, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 147, summary: "Political pressure fractures Avengers into factions led by Steve Rogers and Tony Stark.", characters: ["Captain America", "Iron Man", "Spider-Man", "Black Panther"], platforms: ["Disney+"], context: "MCU Spider-Man and Black Panther debut." },
+            { id: "bw", title: "Black Widow", year: 2021, chrono: 22, type: "Movie", phase: "Phase 4", saga: "Multiverse Saga", category: "MCU Main", earth: "Earth-616", runtime: 134, summary: "Natasha Romanoff confronts her past when a dangerous conspiracy arises.", characters: ["Natasha Romanoff", "Yelena Belova", "Taskmaster"], platforms: ["Disney+"], context: "Set right after Civil War." },
+            { id: "sm_hc", title: "Spider-Man: Homecoming", year: 2017, chrono: 23, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "Spider-Verse", earth: "Earth-616", runtime: 133, summary: "Peter Parker balances high school life with his superhero duties while fighting Vulture.", characters: ["Peter Parker", "Tony Stark", "Adrian Toomes"], platforms: ["Disney+"], context: "Tom Holland's first standalone Spider-Man movie." },
+            { id: "drstrange1", title: "Doctor Strange", year: 2016, chrono: 24, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 115, summary: "Neurosurgeon Stephen Strange discovers mystic arts after a car crash.", characters: ["Stephen Strange", "Wong", "Ancient One"], platforms: ["Disney+"], context: "Time Stone introduction." },
+            { id: "bp1", title: "Black Panther", year: 2018, chrono: 25, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 134, summary: "T'Challa returns home to Wakanda to take the throne, but faces Erik Killmonger.", characters: ["T'Challa", "Killmonger", "Shuri"], platforms: ["Disney+"], context: "Follows Civil War." },
+            { id: "thor3", title: "Thor: Ragnarok", year: 2017, chrono: 26, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 130, summary: "Thor must race against time to stop Hela from destroying Asgard.", characters: ["Thor", "Loki", "Hulk", "Hela"], platforms: ["Disney+"], context: "Leads directly into Infinity War." },
+            { id: "ant2", title: "Ant-Man and the Wasp", year: 2018, chrono: 27, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 118, summary: "Scott Lang teams with Wasp on an urgent mission while trapped under house arrest.", characters: ["Scott Lang", "Hope van Dyne", "Hank Pym"], platforms: ["Disney+"], context: "Post-credits happens during Thanos' snap." },
+            { id: "iw", title: "Avengers: Infinity War", year: 2018, chrono: 28, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 149, summary: "The Avengers try to stop Thanos before he wipes out half the universe.", characters: ["Thanos", "Avengers", "Guardians"], platforms: ["Disney+"], context: "The cosmic snap." },
+            { id: "endgame", title: "Avengers: Endgame", year: 2019, chrono: 29, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "MCU Main", earth: "Earth-616", runtime: 181, summary: "Remaining Avengers attempt a time heist to reverse Thanos' destruction.", characters: ["Iron Man", "Captain America", "Thor", "Black Widow"], platforms: ["Disney+"], context: "Climax of Infinity Saga." },
+            { id: "spidey_itsv", title: "Spider-Man: Into the Spider-Verse", year: 2018, chrono: 30, type: "Movie", phase: "Spider-Verse", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-1610", runtime: 117, summary: "Teen Miles Morales becomes Spider-Man and meets alternate versions of Spider-Man from other dimensions.", characters: ["Miles Morales", "Peter B. Parker", "Gwen Stacy"], platforms: ["Disney+", "Rent"], context: "Oscar-winning Spider-Verse animated phenomenon." },
+            { id: "venom1", title: "Venom", year: 2018, chrono: 31, type: "Movie", phase: "Sony Marvel", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-688", runtime: 112, summary: "Journalist Eddie Brock gains superpowers after bonding with an alien symbiote.", characters: ["Eddie Brock", "Venom", "Carlton Drake"], platforms: ["Disney+", "Hulu"], context: "Sony's Spider-Man Universe (SSU) launch." },
+            { id: "sm_ffh", title: "Spider-Man: Far From Home", year: 2019, chrono: 32, type: "Movie", phase: "Phase 3", saga: "Infinity Saga", category: "Spider-Verse", earth: "Earth-616", runtime: 129, summary: "Peter Parker's European trip is disrupted when Mysterio creates illusions.", characters: ["Peter Parker", "Mysterio", "Nick Fury"], platforms: ["Disney+"], context: "Post-Blip recovery & identity reveal." },
+            { id: "sm_nwh", title: "Spider-Man: No Way Home", year: 2021, chrono: 33, type: "Movie", phase: "Phase 4", saga: "Multiverse Saga", category: "Spider-Verse", earth: "Earth-616", runtime: 148, summary: "A spell brings multiversal villains and Tobey & Andrew Spider-Men into Tom Holland's world.", characters: ["Tom Spider-Man", "Tobey Spider-Man", "Andrew Spider-Man", "Doc Ock", "Green Goblin"], platforms: ["Disney+"], context: "Ultimate live-action Spider-Man multiverse crossover." },
+            { id: "drstrange2", title: "Doctor Strange in the Multiverse of Madness", year: 2022, chrono: 34, type: "Movie", phase: "Phase 4", saga: "Multiverse Saga", category: "MCU Main", earth: "Earth-616 / Multiverse", runtime: 126, summary: "Doctor Strange travels the multiverse with America Chavez while hunted by Scarlet Witch.", characters: ["Doctor Strange", "Wanda Maximoff", "America Chavez", "Illuminati"], platforms: ["Disney+"], context: "Features Illuminati variants including Reed Richards and Professor X." },
+            { id: "spidey_atsv", title: "Spider-Man: Across the Spider-Verse", year: 2023, chrono: 35, type: "Movie", phase: "Spider-Verse", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-1610 / Multiverse", runtime: 140, summary: "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People.", characters: ["Miles Morales", "Gwen Stacy", "Spider-Man 2099", "Spider-Punk"], platforms: ["Netflix"], context: "Mind-bending animated multiversal Spider-Society masterpiece." },
+            { id: "dp_wolv", title: "Deadpool & Wolverine", year: 2024, chrono: 36, type: "Movie", phase: "Phase 5", saga: "Multiverse Saga", category: "Legacy X-Men", earth: "Earth-10005 / TVA / Earth-616", runtime: 128, summary: "Deadpool is recruited by the TVA and teams up with Wolverine to save his universe.", characters: ["Wade Wilson", "Wolverine", "Cassandra Nova", "Blade", "Gambit"], platforms: ["Disney+"], context: "Integrates Fox X-Men Universe into the MCU Multiverse." },
+            { id: "agatha", title: "Agatha All Along", year: 2024, chrono: 37, type: "Series", phase: "Phase 5", saga: "Multiverse Saga", category: "MCU Main", earth: "Earth-616", runtime: 340, summary: "Agatha Harkness gathers a coven of witches to walk the Witches' Road.", characters: ["Agatha Harkness", "Teen / Billy Kaplan", "Rio Vidal"], platforms: ["Disney+"], context: "Magic & Wiccan lore post-WandaVision." },
+            { id: "daredevil_ba", title: "Daredevil: Born Again", year: 2025, chrono: 38, type: "Series", phase: "Phase 5", saga: "Multiverse Saga", category: "Defenders", earth: "Earth-616", runtime: 450, summary: "Matt Murdock and Wilson Fisk navigate NYC politics and street vigilantism.", characters: ["Matt Murdock", "Wilson Fisk", "Punisher"], platforms: ["Disney+"], context: "Defenders street saga revival in mainstream MCU." },
+            { id: "cap4", title: "Captain America: Brave New World", year: 2025, chrono: 39, type: "Movie", phase: "Phase 5", saga: "Multiverse Saga", category: "MCU Main", earth: "Earth-616", runtime: 125, summary: "Sam Wilson takes on the mantle of Captain America and faces Red Hulk.", characters: ["Sam Wilson", "Thaddeus Ross / Red Hulk", "Joaquin Torres"], platforms: ["Disney+"], context: "Adamantium discovery." },
+            { id: "thunderbolts", title: "Thunderbolts*", year: 2025, chrono: 40, type: "Movie", phase: "Phase 5", saga: "Multiverse Saga", category: "MCU Main", earth: "Earth-616", runtime: 130, summary: "An irreverent team of antiheroes goes on a covert operation.", characters: ["Yelena Belova", "Bucky Barnes", "Red Guardian", "Sentry"], platforms: ["Disney+"], context: "Anti-hero squad formation." },
+            { id: "f4", title: "The Fantastic Four: First Steps", year: 2025, chrono: 41, type: "Movie", phase: "Phase 6", saga: "Multiverse Saga", category: "MCU Main", earth: "Retro 1960s Earth", runtime: 135, summary: "Marvel's First Family faces Galactus and Silver Surfer in a retro universe.", characters: ["Reed Richards", "Sue Storm", "Johnny Storm", "Ben Grimm", "Galactus"], platforms: ["Disney+"], context: "Fantastic Four intro leading to Doomsday." },
+            { id: "spiderman4", title: "Spider-Man 4 (MCU)", year: 2026, chrono: 42, type: "Movie", phase: "Phase 6", saga: "Spider-Verse", category: "Spider-Verse", earth: "Earth-616", runtime: 135, summary: "Tom Holland's Peter Parker starts fresh as a street-level Spider-Man following No Way Home's spell.", characters: ["Peter Parker", "Ned Leeds", "Daredevil"], platforms: ["Theaters"], context: "New street saga chapter for Spider-Man." },
+            { id: "avengers_doomsday", title: "Avengers: Doomsday", year: 2026, chrono: 43, type: "Movie", phase: "Phase 6", saga: "Multiverse Saga", category: "MCU Main", earth: "Multiverse", runtime: 165, summary: "Earth's heroes face Doctor Doom in a multiversal confrontation.", characters: ["Doctor Doom", "Avengers", "Fantastic Four"], platforms: ["Theaters"], context: "Phase 6 epic climax." }
+        ];
+
+        // State Management
+        let watchedItems = new Set(JSON.parse(localStorage.getItem('marvel_watched_v4') || '[]'));
+        let currentOrder = 'chronological';
+        let currentView = 'grid';
+        let currentCat = 'ALL';
+        let currentType = 'ALL';
+        let audioEnabled = true;
+
+        // Web Audio Synthesizer for SFX
+        const AudioFX = {
+            ctx: null,
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            },
+            playClick() {
+                if (!audioEnabled) return;
+                this.init();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(200, this.ctx.currentTime + 0.08);
+                gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.08);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + 0.08);
+            },
+            playSpiderSense() {
+                if (!audioEnabled) return;
+                this.init();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(800, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1400, this.ctx.currentTime + 0.2);
+                gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.25);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + 0.25);
+            }
+        };
+
+        function toggleAudio() {
+            audioEnabled = !audioEnabled;
+            const btn = document.getElementById('sound-toggle');
+            const icon = document.getElementById('sound-icon');
+            if (audioEnabled) {
+                document.getElementById('btn-sound-toggle').innerHTML = `<i data-lucide="volume-2" class="w-4 h-4 text-amber-400"></i><span class="hidden sm:inline">SFX: ON</span>`;
+            } else {
+                document.getElementById('btn-sound-toggle').innerHTML = `<i data-lucide="volume-x" class="w-4 h-4 text-slate-500"></i><span class="hidden sm:inline">SFX: OFF</span>`;
+            }
+            lucide.createIcons();
+        }
+
+        // Quotes Ticker
+        const MCU_QUOTES = [
+            `"With great power comes great responsibility." — Peter Parker`,
+            `"I am Iron Man." — Tony Stark`,
+            `"I can do this all day." — Steve Rogers`,
+            `"We are Groot." — Groot`,
+            `"I have glorious purpose." — Loki`,
+            `"Till you're ninety!" — Wolverine`,
+            `"Flame on!" — Johnny Storm`
+        ];
+
+        function rotateQuote() {
+            const randomQuote = MCU_QUOTES[Math.floor(Math.random() * MCU_QUOTES.length)];
+            const qEl = document.getElementById('mcu-quote');
+            if (qEl) qEl.innerText = randomQuote;
+        }
+
+        // DOM Ready
+        window.addEventListener('DOMContentLoaded', () => {
+            initWebCanvas();
+            renderApp();
+            lucide.createIcons();
+            setInterval(rotateQuote, 5500);
+        });
+
+        // Dynamic Spider Canvas Interactive Web Trails
+        function initWebCanvas() {
+            const canvas = document.getElementById('web-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            let mouse = { x: width / 2, y: height / 2 };
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            const points = Array.from({ length: 45 }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                radius: Math.random() * 2 + 1
+            }));
+
+            function drawWebs() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw Web particle links
+                for (let i = 0; i < points.length; i++) {
+                    const p1 = points[i];
+                    p1.x += p1.vx;
+                    p1.y += p1.vy;
+
+                    if (p1.x < 0 || p1.x > width) p1.vx *= -1;
+                    if (p1.y < 0 || p1.y > height) p1.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#FF0033';
+                    ctx.shadowBlur = 6;
+                    ctx.shadowColor = '#FF0033';
+                    ctx.fill();
+
+                    // Connect to mouse web-sling
+                    const dxMouse = mouse.x - p1.x;
+                    const dyMouse = mouse.y - p1.y;
+                    const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                    if (distMouse < 140) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = `rgba(0, 240, 255, ${1 - distMouse / 140})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+
+                    // Connect points
+                    for (let j = i + 1; j < points.length; j++) {
+                        const p2 = points[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(255, 0, 51, ${0.15 - dist / 800})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(drawWebs);
+            }
+            drawWebs();
+        }
+
+        // Main Render Logic
+        function renderApp() {
+            updateStats();
+            updateRecommender();
+
+            let items = [...MARVEL_DATA];
+
+            const query = document.getElementById('search-input')?.value.toLowerCase().trim() || '';
+            if (query) {
+                items = items.filter(i => 
+                    i.title.toLowerCase().includes(query) || 
+                    i.earth.toLowerCase().includes(query) ||
+                    i.category.toLowerCase().includes(query) ||
+                    i.characters.some(c => c.toLowerCase().includes(query))
+                );
+            }
+
+            if (currentCat !== 'ALL') {
+                items = items.filter(i => i.category === currentCat);
+            }
+
+            if (currentType !== 'ALL') {
+                items = items.filter(i => i.type === currentType);
+            }
+
+            if (currentOrder === 'chronological') {
+                items.sort((a, b) => a.chrono - b.chrono);
+            } else {
+                items.sort((a, b) => a.year - b.year);
+            }
+
+            const container = document.getElementById('content-container');
+            if (!container) return;
+
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-20 glass-card-vibrant rounded-2xl border-red-600/40">
+                        <i data-lucide="bug-off" class="w-12 h-12 text-red-500 mx-auto mb-3 animate-bounce"></i>
+                        <h3 class="font-bebas text-3xl text-white">No Spider-Sense Targets Found</h3>
+                        <p class="text-xs text-slate-400 font-medium">Try broadening your filters or search terms.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            if (currentView === 'grid') {
+                renderGrid(container, items);
+            } else {
+                renderTimeline(container, items);
+            }
+
+            lucide.createIcons();
+        }
+
+        function renderGrid(container, items) {
+            container.innerHTML = `
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    ${items.map((item) => createCardHTML(item)).join('')}
+                </div>
+            `;
+        }
+
+        function renderTimeline(container, items) {
+            container.innerHTML = `
+                <div class="relative py-4">
+                    <div class="timeline-line-vibrant h-full top-0"></div>
+                    <div class="space-y-8 relative z-10">
+                        ${items.map((item, index) => `
+                            <div class="flex flex-col md:flex-row items-center gap-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}">
+                                <div class="w-full md:w-1/2 p-2">
+                                    ${createCardHTML(item)}
+                                </div>
+                                <div class="w-9 h-9 rounded-full bg-marvel-gradient border-2 border-amber-400 shadow-xl shadow-red-600/80 flex items-center justify-center text-white font-mono-tag text-xs font-black shrink-0">
+                                    ${index + 1}
+                                </div>
+                                <div class="w-full md:w-1/2"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function createCardHTML(item) {
+            const isWatched = watchedItems.has(item.id);
+            const isSpider = item.category === 'Spider-Verse' || item.title.includes('Spider-Man');
+
+            return `
+                <div class="glass-card-vibrant rounded-2xl p-5 flex flex-col justify-between relative group ${isSpider ? 'spider-card-glow' : ''} ${isWatched ? 'border-emerald-500/60 bg-emerald-950/20' : ''}">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="font-mono-tag text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded ${isSpider ? 'bg-blue-950/90 text-cyan-300 border border-blue-500/60' : 'bg-red-950/90 text-red-400 border border-red-800/60'}">
+                                ${isSpider ? '🕷️ ' : ''}${item.earth}
+                            </span>
+                            <span class="font-mono-tag text-xs text-amber-400 font-extrabold">
+                                #${item.chrono} CHRONO
+                            </span>
+                        </div>
+
+                        <h3 onclick="openDetailModal('${item.id}')" class="font-bebas text-2xl sm:text-3xl tracking-wide text-white group-hover:text-amber-300 transition-colors leading-tight mb-2 cursor-pointer">
+                            ${item.title}
+                        </h3>
+
+                        <div class="flex items-center gap-3 text-xs text-slate-300 font-mono-tag mb-3">
+                            <span class="flex items-center gap-1 font-bold text-amber-300"><i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-400"></i> ${item.year}</span>
+                            <span class="flex items-center gap-1 font-bold text-cyan-300"><i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400"></i> ${formatMinutes(item.runtime)}</span>
+                            <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-200 font-black uppercase">${item.type}</span>
+                        </div>
+
+                        <p class="text-xs text-slate-300 font-medium leading-relaxed line-clamp-2 mb-4">
+                            ${item.summary}
+                        </p>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between mt-auto gap-2">
+                        <span class="text-[11px] font-mono-tag text-red-400 uppercase font-black tracking-wider">${item.phase}</span>
+                        
+                        <div class="flex items-center gap-2">
+                            <button onclick="openDetailModal('${item.id}')" class="p-2 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 transition-all" title="View Detail">
+                                <i data-lucide="info" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="toggleWatch('${item.id}')" class="px-3.5 py-1.5 rounded-xl font-bebas text-lg tracking-wider flex items-center gap-1.5 transition-all ${isWatched ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-950/60' : 'bg-marvel-gradient hover:opacity-90 text-white shadow-lg shadow-red-900/60'}">
+                                <i data-lucide="${isWatched ? 'check-circle-2' : 'circle'}" class="w-4 h-4"></i>
+                                ${isWatched ? 'WATCHED' : 'MARK WATCH'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Toggle Watched
+        function toggleWatch(id) {
+            AudioFX.playClick();
+            if (watchedItems.has(id)) {
+                watchedItems.delete(id);
+            } else {
+                watchedItems.add(id);
+                confetti({ particleCount: 55, spread: 70, origin: { y: 0.8 } });
+            }
+            localStorage.setItem('marvel_watched_v4', JSON.stringify([...watchedItems]));
+            renderApp();
+        }
+
+        // Stats
+        function updateStats() {
+            const total = MARVEL_DATA.length;
+            const watched = watchedItems.size;
+            const pct = total ? Math.round((watched / total) * 100) : 0;
+
+            const spentMins = MARVEL_DATA.filter(i => watchedItems.has(i.id)).reduce((a, b) => a + b.runtime, 0);
+            const remainingMins = MARVEL_DATA.filter(i => !watchedItems.has(i.id)).reduce((a, b) => a + b.runtime, 0);
+
+            document.getElementById('stat-watched').innerText = `${watched} / ${total}`;
+            document.getElementById('stat-progress').innerText = `${pct}%`;
+            document.getElementById('stat-time').innerText = formatMinutes(spentMins);
+            document.getElementById('stat-remaining').innerText = formatMinutes(remainingMins);
+        }
+
+        function formatMinutes(mins) {
+            const h = Math.floor(mins / 60);
+            const m = mins % 60;
+            return `${h}h ${m}m`;
+        }
+
+        // Recommender
+        function updateRecommender() {
+            const next = MARVEL_DATA.slice().sort((a, b) => a.chrono - b.chrono).find(i => !watchedItems.has(i.id));
+            const titleEl = document.getElementById('recommend-title');
+            const subEl = document.getElementById('recommend-sub');
+            const btnEl = document.getElementById('btn-quick-watch');
+
+            if (next) {
+                titleEl.innerText = `${next.chrono}. ${next.title} (${next.year})`;
+                subEl.innerText = `${next.earth} • ${formatMinutes(next.runtime)} • ${next.phase}`;
+                btnEl.disabled = false;
+                btnEl.dataset.id = next.id;
+            } else {
+                titleEl.innerText = "Multiverse Fully Mastered!";
+                subEl.innerText = "You have watched all entries in the registry!";
+                btnEl.disabled = true;
+            }
+        }
+
+        function watchNextTitle() {
+            const btnEl = document.getElementById('btn-quick-watch');
+            const id = btnEl?.dataset.id;
+            if (id) {
+                toggleWatch(id);
+            }
+        }
+
+        // Spider-Sense Pick Modal
+        function openSpiderSenseModal() {
+            AudioFX.playSpiderSense();
+            document.getElementById('modal-spidey').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeSpiderSenseModal() {
+            document.getElementById('modal-spidey').classList.add('hidden');
+        }
+
+        function triggerSpiderSenseScan() {
+            AudioFX.playSpiderSense();
+            const resultBox = document.getElementById('spidey-scan-result');
+            const spideyList = MARVEL_DATA.filter(i => i.category === 'Spider-Verse' || i.title.includes('Spider-Man'));
+
+            let count = 0;
+            const interval = setInterval(() => {
+                const randomSpidey = spideyList[Math.floor(Math.random() * spideyList.length)];
+                resultBox.innerHTML = `
+                    <span class="text-xs font-mono-tag text-cyan-400 font-extrabold uppercase tracking-widest">${randomSpidey.earth}</span>
+                    <h4 class="font-bebas text-3xl text-white tracking-wide leading-none my-1">${randomSpidey.title}</h4>
+                    <span class="text-xs text-amber-300 font-mono-tag font-bold">${randomSpidey.year} • ${formatMinutes(randomSpidey.runtime)}</span>
+                `;
+                count++;
+                if (count > 16) {
+                    clearInterval(interval);
+                    confetti({ particleCount: 60, spread: 80, origin: { y: 0.6 } });
+                }
+            }, 70);
+        }
+
+        // Spin Randomizer
+        function openSpinModal() {
+            AudioFX.playClick();
+            document.getElementById('modal-spin').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeSpinModal() {
+            document.getElementById('modal-spin').classList.add('hidden');
+        }
+
+        function spinRandomizer() {
+            AudioFX.playClick();
+            const display = document.getElementById('spin-display');
+            const unwatched = MARVEL_DATA.filter(i => !watchedItems.has(i.id));
+            const pool = unwatched.length ? unwatched : MARVEL_DATA;
+
+            let counter = 0;
+            const interval = setInterval(() => {
+                const randomItem = pool[Math.floor(Math.random() * pool.length)];
+                display.innerHTML = `
+                    <span class="text-xs font-mono-tag text-amber-400 font-black uppercase tracking-widest">${randomItem.earth}</span>
+                    <h4 class="font-bebas text-3xl text-white tracking-wide">${randomItem.title}</h4>
+                    <span class="text-xs text-slate-300 font-mono-tag">${randomItem.year} • ${formatMinutes(randomItem.runtime)}</span>
+                `;
+                counter++;
+                if (counter > 18) {
+                    clearInterval(interval);
+                    confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } });
+                }
+            }, 80);
+        }
+
+        // Filters Controls
+        function setOrder(order) {
+            AudioFX.playClick();
+            currentOrder = order;
+            document.getElementById('order-chrono').className = order === 'chronological' ? 'px-3.5 py-2 rounded-lg font-bold transition-all bg-red-600 text-white shadow-lg shadow-red-900/50' : 'px-3.5 py-2 rounded-lg font-bold transition-all text-slate-400 hover:text-white';
+            document.getElementById('order-release').className = order === 'release' ? 'px-3.5 py-2 rounded-lg font-bold transition-all bg-red-600 text-white shadow-lg shadow-red-900/50' : 'px-3.5 py-2 rounded-lg font-bold transition-all text-slate-400 hover:text-white';
+            renderApp();
+        }
+
+        function setView(view) {
+            AudioFX.playClick();
+            currentView = view;
+            document.getElementById('view-grid').className = view === 'grid' ? 'p-2 rounded-lg transition-all bg-red-600 text-white' : 'p-2 rounded-lg transition-all text-slate-400 hover:text-white';
+            document.getElementById('view-timeline').className = view === 'timeline' ? 'p-2 rounded-lg transition-all bg-red-600 text-white' : 'p-2 rounded-lg transition-all text-slate-400 hover:text-white';
+            renderApp();
+        }
+
+        function filterCategory(cat) {
+            AudioFX.playClick();
+            currentCat = cat;
+            document.querySelectorAll('#category-filters button').forEach(b => {
+                b.className = b.innerText === cat ? 'cat-btn active px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-red-600 text-white shadow' : 'cat-btn px-3 py-1 rounded-lg text-xs font-mono-tag font-bold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white';
+            });
+            renderApp();
+        }
+
+        function filterType(type) {
+            AudioFX.playClick();
+            currentType = type;
+            document.querySelectorAll('#type-filters button').forEach(b => {
+                const match = (type === 'ALL' && b.innerText === 'ALL') || (type === 'Movie' && b.innerText === 'MOVIES') || (type === 'Series' && b.innerText === 'SERIES') || (type === 'Special' && b.innerText === 'SPECIALS');
+                b.className = match ? 'type-btn active px-2.5 py-0.5 rounded text-xs font-mono-tag bg-slate-800 text-white font-bold' : 'type-btn px-2.5 py-0.5 rounded text-xs font-mono-tag bg-slate-900 text-slate-400 border border-slate-800 hover:text-white';
+            });
+            renderApp();
+        }
+
+        function applyFilters() {
+            renderApp();
+        }
+
+        // Detail Modal
+        function openDetailModal(id) {
+            AudioFX.playClick();
+            const item = MARVEL_DATA.find(i => i.id === id);
+            if (!item) return;
+
+            const isWatched = watchedItems.has(item.id);
+            const content = document.getElementById('modal-detail-content');
+            
+            content.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="font-mono-tag text-xs font-black uppercase tracking-widest px-3 py-1 rounded bg-red-950/90 border border-red-700 text-red-300">
+                            ${item.earth}
+                        </span>
+                        <span class="font-mono-tag text-xs text-amber-400 font-extrabold">
+                            Chronological #${item.chrono}
+                        </span>
+                    </div>
+
+                    <h2 class="font-bebas text-4xl sm:text-5xl text-gradient-marvel tracking-wide leading-none">
+                        ${item.title}
+                    </h2>
+
+                    <div class="flex flex-wrap items-center gap-4 text-xs font-mono-tag text-slate-300 font-bold">
+                        <span><strong class="text-amber-400">YEAR:</strong> ${item.year}</span>
+                        <span><strong class="text-cyan-400">RUNTIME:</strong> ${formatMinutes(item.runtime)}</span>
+                        <span><strong class="text-purple-400">TYPE:</strong> ${item.type}</span>
+                        <span><strong class="text-red-400">PHASE:</strong> ${item.phase}</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                        <h4 class="font-cinzel text-xs text-amber-300 font-black tracking-widest uppercase mb-1">Timeline Lore Context</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed font-medium">${item.context}</p>
+                    </div>
+
+                    <p class="text-sm text-slate-200 font-medium leading-relaxed">${item.summary}</p>
+
+                    <div>
+                        <h4 class="font-cinzel text-xs text-slate-400 font-bold tracking-widest uppercase mb-2">Main Heroes & Villains</h4>
+                        <div class="flex flex-wrap gap-1.5">
+                            ${item.characters.map(c => `<span class="px-2.5 py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-xs text-slate-200 font-semibold">${c}</span>`).join('')}
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-xs font-mono-tag text-slate-400">Watch Platform: <strong class="text-white">${item.platforms.join(', ')}</strong></span>
+                        <button onclick="toggleWatch('${item.id}'); closeDetailModal();" class="px-5 py-2.5 rounded-xl font-bebas text-xl tracking-wider flex items-center gap-2 ${isWatched ? 'bg-emerald-600 text-white' : 'bg-marvel-gradient text-white'}">
+                            <i data-lucide="${isWatched ? 'check-circle-2' : 'circle'}" class="w-5 h-5"></i>
+                            ${isWatched ? 'WATCHED' : 'MARK AS WATCHED'}
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('modal-detail').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeDetailModal() {
+            document.getElementById('modal-detail').classList.add('hidden');
+        }
+
+        // Export/Reset Data Controls
+        function exportProgress() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify([...watchedItems]));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", `marvel_watch_progress_${new Date().toISOString().slice(0,10)}.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        function resetProgress() {
+            if (confirm("Are you sure you want to reset all your watched Marvel progress?")) {
+                watchedItems.clear();
+                localStorage.removeItem('marvel_watched_v4');
+                renderApp();
+            }
+        }
+    </script>
+</body>
+</html>
